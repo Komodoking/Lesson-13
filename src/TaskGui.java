@@ -52,7 +52,7 @@ Task t;
         jLabel3 = new javax.swing.JLabel();
         jButton1 = new javax.swing.JButton();
         jButton2 = new javax.swing.JButton();
-        jButton3 = new javax.swing.JButton();
+        btnfor = new javax.swing.JButton();
         btnlast = new javax.swing.JButton();
         lblctask = new javax.swing.JLabel();
         lblttask = new javax.swing.JLabel();
@@ -111,7 +111,12 @@ Task t;
 
         jButton2.setText("<");
 
-        jButton3.setText(">");
+        btnfor.setText(">");
+        btnfor.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnforActionPerformed(evt);
+            }
+        });
 
         btnlast.setText(">|");
         btnlast.addActionListener(new java.awt.event.ActionListener() {
@@ -197,7 +202,7 @@ Task t;
                 .addGap(18, 18, 18)
                 .addComponent(jButton2)
                 .addGap(18, 18, 18)
-                .addComponent(jButton3)
+                .addComponent(btnfor)
                 .addGap(18, 18, 18)
                 .addComponent(btnlast)
                 .addGap(67, 67, 67))
@@ -232,7 +237,7 @@ Task t;
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(jButton1)
                             .addComponent(jButton2)
-                            .addComponent(jButton3)
+                            .addComponent(btnfor)
                             .addComponent(btnlast)))
                     .addGroup(layout.createSequentialGroup()
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
@@ -287,6 +292,13 @@ Task t;
         
     }//GEN-LAST:event_mnrestoretaskActionPerformed
 
+    private void btnforActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnforActionPerformed
+        li.next();
+        li.next();
+        li.previous();
+        li.previous();
+    }//GEN-LAST:event_btnforActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -323,10 +335,10 @@ Task t;
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton btnfor;
     private javax.swing.JButton btnlast;
     private javax.swing.JButton jButton1;
     private javax.swing.JButton jButton2;
-    private javax.swing.JButton jButton3;
     private javax.swing.JCheckBoxMenuItem jCheckBoxMenuItem1;
     private javax.swing.JDialog jDialog1;
     private javax.swing.JLabel jLabel1;
