@@ -58,12 +58,12 @@ Task t;
         lblttask = new javax.swing.JLabel();
         jMenuBar1 = new javax.swing.JMenuBar();
         jMenu2 = new javax.swing.JMenu();
-        jMenuItem2 = new javax.swing.JMenuItem();
+        mnshowall = new javax.swing.JMenuItem();
         jMenuItem3 = new javax.swing.JMenuItem();
         jMenu3 = new javax.swing.JMenu();
         jMenuItem4 = new javax.swing.JMenuItem();
         jMenuItem5 = new javax.swing.JMenuItem();
-        jMenuItem6 = new javax.swing.JMenuItem();
+        mnrestoretask = new javax.swing.JMenuItem();
         jMenuItem7 = new javax.swing.JMenuItem();
         jMenu6 = new javax.swing.JMenu();
         jMenuItem8 = new javax.swing.JMenuItem();
@@ -126,8 +126,13 @@ Task t;
 
         jMenu2.setText("Program");
 
-        jMenuItem2.setText("Show all Tasks");
-        jMenu2.add(jMenuItem2);
+        mnshowall.setText("Show all Tasks");
+        mnshowall.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                mnshowallActionPerformed(evt);
+            }
+        });
+        jMenu2.add(mnshowall);
 
         jMenuItem3.setText("Exit");
         jMenu2.add(jMenuItem3);
@@ -139,11 +144,16 @@ Task t;
         jMenuItem4.setText("Replace Current task");
         jMenu3.add(jMenuItem4);
 
-        jMenuItem5.setText("jMenuItem5");
+        jMenuItem5.setText("Remove Current Task");
         jMenu3.add(jMenuItem5);
 
-        jMenuItem6.setText("Restor Current Task to Screen");
-        jMenu3.add(jMenuItem6);
+        mnrestoretask.setText("Restore Current Task to Screen");
+        mnrestoretask.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                mnrestoretaskActionPerformed(evt);
+            }
+        });
+        jMenu3.add(mnrestoretask);
 
         jMenuItem7.setText("Clear Screen");
         jMenu3.add(jMenuItem7);
@@ -264,6 +274,19 @@ Task t;
        txtds.setText(t.getDescription());
     }//GEN-LAST:event_btnlastActionPerformed
 
+    private void mnshowallActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_mnshowallActionPerformed
+        String result="";
+        for (int i = 0; i < list.size(); i++) {
+            t=(Task)list.get(i);
+            result+="TASK "+(i+1)+":\n"+t.toString()+"\n";
+        }
+        JOptionPane.showMessageDialog(this, result);
+    }//GEN-LAST:event_mnshowallActionPerformed
+
+    private void mnrestoretaskActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_mnrestoretaskActionPerformed
+        
+    }//GEN-LAST:event_mnrestoretaskActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -318,17 +341,17 @@ Task t;
     private javax.swing.JMenuBar jMenuBar1;
     private javax.swing.JMenuBar jMenuBar2;
     private javax.swing.JMenuItem jMenuItem1;
-    private javax.swing.JMenuItem jMenuItem2;
     private javax.swing.JMenuItem jMenuItem3;
     private javax.swing.JMenuItem jMenuItem4;
     private javax.swing.JMenuItem jMenuItem5;
-    private javax.swing.JMenuItem jMenuItem6;
     private javax.swing.JMenuItem jMenuItem7;
     private javax.swing.JMenuItem jMenuItem8;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JLabel lblctask;
     private javax.swing.JLabel lbldescription;
     private javax.swing.JLabel lblttask;
+    private javax.swing.JMenuItem mnrestoretask;
+    private javax.swing.JMenuItem mnshowall;
     private javax.swing.JMenuItem mnuinsertafter;
     private javax.swing.JTextArea txtds;
     private javax.swing.JTextField txtname;
